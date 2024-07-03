@@ -1,24 +1,23 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const link = document.querySelector("a");
-
-function handleLinkClick(event) {
-  event.preventDefault();
-  console.log(event);
-}
-
+const greeting = document.querySelector("#greeting");
+const HIDDEN_CLASSNAME = "hidden"; //스트링만 포함된 변수는 대문자로 관습. 
 function onLoginSubmit(event) {
   event.preventDefault();
-  console.log(loginInput.value);
+  const username = loginInput.value;
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  greeting.innerText = "Hello " + username;
+  greeting.innerText = `Hello ${username}`; //위와 같은데 백틱기호임. 이게 더 편한듯
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
-link.addEventListener("click", handleLinkClick);
-/* loginForm에서 submit이 일어나면 onLoginSubmit함수가 호출된다.
 
-호출될 때 방금 발생한 어떤 정보를 아규먼트로 가지는데 이게 event 파라미터로 가며,
-
-그 정보 속에 preventDefault라는 걸 함수를 사용해 true로 바꿔주면 
-
-브라우저의 기본동작(새로고침 등)을 막는다.
- 그래서 더 이상 내용을 입력했을 때 새로고침되지 않고 value가 consolelog됨.  */
+/* 1.html에서 login-form 밑에 h1이라는 블록을 만들고 히든 클래스를 추가함.
+2. 히든 클래스는 css스타일에 display: none으로 정의됨.
+3. js에서 html의 h1 정보를 가져오는 greeting 변수 생성
+4. username에 input value를 저장하고 loginForm에 히든 클래스 추가하여 로그인 폼 사라지게끔
+5. 그리고 h1을 나타내는 greeting의 innerText에 인사+변수값을 주고
+6. 보이지 않던 greeting (h1)을 히든 클래스 리무브로 나타나게 함.
+7. 이 모든 것은 로그인 폼이 submit되었을 때 일어남   */
