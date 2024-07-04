@@ -34,7 +34,7 @@ if (savedUsername === null) {
 /* 
 loginForm에서 submit이 되면 onLoginSubmit 함수가 호출된다. 이때 파라미터를 event라고 해놓고 event 객체를 이용해 브라우저 기본행동을 preventDefault()로 막아놓는다. username 지역변수를 하나 만들고 여기에 loginInput.value을 저장한다. 
 
-localstorage에 USERNAME_KEY 라는 이름의 키를 만들고 거기에 지역변수 username에 저장된 값을 넣는다.
+localstorage에 USERNAME_KEY ("username")라는 이름의 키를 만들고 거기에 지역변수 username에 저장된 값을 넣는다.
 그리고 로그인 폼에 히든 클래스를 추가하며 안보이게 만들고 paintGreeting함수를 아규먼트 username으로 호출한다. 
 
 paintGreeting은 h1을 보이게 하는 함수이다. greeting에 히든 클래스를 삭제하고 안에다가 텍스트를 준다. 
