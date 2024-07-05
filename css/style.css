@@ -1,3 +1,15 @@
 .hidden {
-    display: none; /* visibility: hidden은 공간은 그대로이나 보이지 않는거고 disaplay: none 은 잡아둔 공간도 사라짐 */
+  display: none; /* visibility: hidden은 공간은 그대로이나 보이지 않는거고 disaplay: none 은 잡아둔 공간도 사라짐 */
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  opacity: 80%;
 }
